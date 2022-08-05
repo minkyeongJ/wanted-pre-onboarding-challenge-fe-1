@@ -1,0 +1,31 @@
+:root{
+  --btn-color: #8687e7;
+}
+
+.ir {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+html {
+  background-color: aqua;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: lightgrey;
+    width: 100vw;
+  }
+}

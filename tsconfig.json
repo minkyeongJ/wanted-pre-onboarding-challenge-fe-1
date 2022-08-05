@@ -6,7 +6,8 @@
     "rootDir": ".",
     "strict": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react-jsx"
   },
   "include": ["**/*"],
   "exclude": ["./node_modules"]
