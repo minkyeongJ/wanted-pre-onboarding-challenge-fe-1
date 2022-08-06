@@ -3,10 +3,15 @@ import styled from "styled-components";
 export const LoginSection = styled.section`
   box-sizing: border-box;
   height: 100vh;
-  max-width: 500px;
-  margin: 0 auto;
   vertical-align: middle;
   position: relative;
+  @media screen and (min-width: 767px) {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0 40px;
+  }
 `;
 
 export const PositionCenter = styled.div`
@@ -14,11 +19,17 @@ export const PositionCenter = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 20em;
   background-color: white;
   padding: 30px 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0 gray;
+  @media screen and (min-width: 767px) {
+    width: 20em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 gray;
+    /* display: none; */
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const InputSection = styled.div`

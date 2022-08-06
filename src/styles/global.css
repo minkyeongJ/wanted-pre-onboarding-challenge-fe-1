@@ -12,7 +12,6 @@
 }
 
 html {
-  background-color: aqua;
   font-size: 62.5%;
 }
 
@@ -25,7 +24,6 @@ body {
 
 @media (max-width: 767px) {
   body {
-    background-color: lightgrey;
     width: 100vw;
   }
 }
