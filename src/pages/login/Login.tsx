@@ -16,7 +16,7 @@ export default function Login() {
       <LoginSection>
         <PositionCenter>
           <TitleSection>
-            <Title>오늘도 알찬 하루!</Title>
+            <Title>로그인</Title>
           </TitleSection>
           <InputSection>
             <Label htmlFor="input_id">아이디</Label>
