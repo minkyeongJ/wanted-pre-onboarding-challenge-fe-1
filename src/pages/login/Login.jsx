@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Button,
   Input,
@@ -21,7 +22,7 @@ export default function Login() {
           <InputSection>
             <Label htmlFor="input_id">아이디</Label>
             <Input
-              type="text"
+              type="email"
               id="input_id"
               placeholder="아이디를 입력하세요."
             />
