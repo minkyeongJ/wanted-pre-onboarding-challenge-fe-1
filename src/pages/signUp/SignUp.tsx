@@ -18,7 +18,7 @@ export default function SignUp() {
   });
   const { error, signUp } = useSignUp();
 
-  const inputHandle = (e) => {
+  const inputHandle = (e: any) => {
     switch (e.target.type) {
       case "email":
         setUserInfo((currentData) => ({
@@ -37,7 +37,7 @@ export default function SignUp() {
     }
   };
 
-  const onSubmitSignUp = (e) => {
+  const onSubmitSignUp = (e: any) => {
     e.preventDefault();
     console.log(userInfo);
     signUp(userInfo).then((response) => console.log(response));
