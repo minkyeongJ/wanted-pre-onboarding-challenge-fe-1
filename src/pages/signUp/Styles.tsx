@@ -73,6 +73,11 @@ export const Button = styled(ButtonStyle)`
   width: 100%;
   border-radius: 10px;
   padding: 10px 0;
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background: var(--btn-color);
+  }
 `;
 
 export const JoinBtn = styled(ButtonStyle)`

@@ -1,26 +1,23 @@
 import { useState } from "react";
-import useSignUpValidation from "./useSignUpValidation";
 
 export default function useHandleSignUp() {
-  const { validationMessage, buttonOff, handleCheckId, handleCheckPw } =
-    useSignUpValidation();
   const [userInfo, setUserInfo] = useState({
     id: "",
     password: "",
   });
 
-  const handleId = (e: any) => {
+  const handleInputId = (e: any) => {
     setUserInfo((currentData) => ({
       ...currentData,
-      id: e.target.value,
+      id: e,
     }));
   };
 
-  const handelPw = (e: any) => {
+  const handleInputPw = (e: any) => {
     setUserInfo((currentData) => ({
       ...currentData,
-      password: e.target.value,
+      password: e,
     }));
   };
-  return { userInfo, handleId, handelPw };
+  return { userInfo, handleInputId, handleInputPw };
 }

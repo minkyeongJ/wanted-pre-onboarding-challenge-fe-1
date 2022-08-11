@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { USER_VALIDATION_ERRORS } from "../constants";
 
 export default function useSignUpValidation() {
@@ -6,13 +6,27 @@ export default function useSignUpValidation() {
     idValidationMessage: "",
     pwValidationMessage: "",
   });
-  const [buttonOff, setButtonOff] = useState(true);
+  const [isInputValidateState, setIsInputValidateState] = useState({
+    id: false,
+    password: false,
+  });
   const checkId = /[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 
-  const handleCheckId = (userInfo: any) => {
-    if (checkId.test(userInfo.email)) {
-      setButtonOff(true);
+  const handleCheckId = (inputId: any) => {
+    if (checkId.test(inputId)) {
+      setIsInputValidateState((currentState) => ({
+        ...currentState,
+        id: true,
+      }));
+      setValidationMessage((currentMessage) => ({
+        ...currentMessage,
+        idValidationMessage: "",
+      }));
     } else {
+      setIsInputValidateState((currentState) => ({
+        ...currentState,
+        id: false,
+      }));
       setValidationMessage((currentMessage) => ({
         ...currentMessage,
         idValidationMessage: USER_VALIDATION_ERRORS.INVALID_ID,
@@ -20,10 +34,21 @@ export default function useSignUpValidation() {
     }
   };
 
-  const handleCheckPw = (userInfo: any) => {
-    if (userInfo.password.length === 8) {
-      setButtonOff(true);
+  const handleCheckPw = (inputPw: any) => {
+    if (inputPw.length >= 8) {
+      setIsInputValidateState((currentState) => ({
+        ...currentState,
+        password: true,
+      }));
+      setValidationMessage((currentMessage) => ({
+        ...currentMessage,
+        pwValidationMessage: "",
+      }));
     } else {
+      setIsInputValidateState((currentState) => ({
+        ...currentState,
+        password: false,
+      }));
       setValidationMessage((currentMessage) => ({
         ...currentMessage,
         pwValidationMessage: USER_VALIDATION_ERRORS.INVALID_PASSWORD,
@@ -31,5 +56,10 @@ export default function useSignUpValidation() {
     }
   };
 
-  return { validationMessage, buttonOff, handleCheckId, handleCheckPw };
+  return {
+    validationMessage,
+    isInputValidateState,
+    handleCheckId,
+    handleCheckPw,
+  };
 }
