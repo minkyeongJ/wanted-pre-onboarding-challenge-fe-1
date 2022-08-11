@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useSignUp from "../../hooks/useSignUp";
 import {
   Button,
   Input,
@@ -10,32 +9,12 @@ import {
   Title,
   TitleSection,
 } from "./Styles";
+import useSignUp from "../../hooks/useSignUp";
+import useHandleSignUp from "../../hooks/useHandleSignUp";
 
 export default function SignUp() {
-  const [userInfo, setUserInfo] = useState({
-    email: "",
-    password: "",
-  });
   const { error, signUp } = useSignUp();
-
-  const inputHandle = (e: any) => {
-    switch (e.target.type) {
-      case "email":
-        setUserInfo((currentData) => ({
-          ...currentData,
-          email: e.target.value,
-        }));
-        break;
-      case "password":
-        setUserInfo((currentData) => ({
-          ...currentData,
-          password: e.target.value,
-        }));
-        break;
-      default:
-        console.log("아이디와 비밀번호가 선택되지 않았습니다.");
-    }
-  };
+  const { userInfo, handleId, handelPw } = useHandleSignUp();
 
   const onSubmitSignUp = (e: any) => {
     e.preventDefault();
@@ -59,7 +38,7 @@ export default function SignUp() {
                 name="userId"
                 id="input_id"
                 placeholder="아이디를 입력하세요."
-                onChange={inputHandle}
+                onChange={handleId}
               />
               <Label htmlFor="input_pw">비밀번호</Label>
               <Input
@@ -67,7 +46,7 @@ export default function SignUp() {
                 name="userPw"
                 id="input_pw"
                 placeholder="비밀번호를 입력하세요."
-                onChange={inputHandle}
+                onChange={handelPw}
               />
             </InputSection>
             <Button type="submit">회원가입</Button>
