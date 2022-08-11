@@ -8,6 +8,7 @@ import {
   PositionCenter,
   Title,
   TitleSection,
+  Validate,
 } from "./Styles";
 import useSignUp from "../../hooks/useSignUp";
 import useHandleSignUp from "../../hooks/useHandleSignUp";
@@ -66,7 +67,7 @@ export default function SignUp() {
                 placeholder="아이디를 입력하세요."
                 onChange={handleId}
               />
-              <p>{validationMessage.idValidationMessage}</p>
+              <Validate>{validationMessage.idValidationMessage}</Validate>
               <Label htmlFor="input_pw">비밀번호</Label>
               <Input
                 type="password"
@@ -75,7 +76,7 @@ export default function SignUp() {
                 placeholder="비밀번호를 입력하세요."
                 onChange={handlePw}
               />
-              <p>{validationMessage.pwValidationMessage}</p>
+              <Validate>{validationMessage.pwValidationMessage}</Validate>
             </InputSection>
             <Button type="submit" disabled={buttonOff}>
               회원가입

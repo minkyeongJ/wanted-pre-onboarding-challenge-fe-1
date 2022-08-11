@@ -48,13 +48,12 @@ export const Title = styled.h1`
 `;
 
 export const Input = styled.input`
-  margin-bottom: 20px;
   border: inherit;
   border-bottom: 1px solid var(--btn-color);
 `;
 
 export const Label = styled.label`
-  margin-bottom: 5px;
+  margin: 20px 0 5px;
 `;
 
 const ButtonStyle = styled.button`
@@ -62,7 +61,7 @@ const ButtonStyle = styled.button`
   width: 100%;
   border-radius: 10px;
   padding: 10px 0;
-  margin-top: 10px;
+  margin: 30px 0 10px;
   cursor: pointer;
 `;
 
@@ -85,4 +84,10 @@ export const JoinBtn = styled(ButtonStyle)`
   color: var(--btn-color);
   border: 1px solid var(--btn-color);
   box-sizing: border-box;
+`;
+
+export const Validate = styled.p`
+  color: red;
+  margin-top: 5px;
+  font-size: 1.2rem;
 `;
