@@ -2,14 +2,14 @@ import { useState } from "react";
 
 export default function useHandleSignUp() {
   const [userInfo, setUserInfo] = useState({
-    id: "",
+    email: "",
     password: "",
   });
 
   const handleInputId = (e: any) => {
     setUserInfo((currentData) => ({
       ...currentData,
-      id: e,
+      email: e,
     }));
   };
 

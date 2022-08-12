@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { USER_VALIDATION_ERRORS } from "../constants";
 
 export default function useSignUpValidation() {
