@@ -8,9 +8,18 @@ const USER_VALIDATION_ERRORS = {
   EXIST_USER: "이미 존재하는 유저입니다.",
 };
 
+const USER_SUCCESS_MESSAGE = {
+  LOGIN_SUCCESS: "성공적으로 로그인 했습니다",
+};
+
 const TODO_VALIDATION_ERRORS = {
   TODO_SOMETHING_WRONG: "todo를 찾는 도중 문제가 생겼습니다.",
   INVALID_VALUE: "input을 다시 확인해주세요.",
 };
 
-export { SERVER_URL, USER_VALIDATION_ERRORS, TODO_VALIDATION_ERRORS };
+export {
+  SERVER_URL,
+  USER_VALIDATION_ERRORS,
+  USER_SUCCESS_MESSAGE,
+  TODO_VALIDATION_ERRORS,
+};

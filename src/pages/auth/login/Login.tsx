@@ -13,22 +13,31 @@ import {
 } from "./Styles";
 import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
 import useLogin from "../../../hooks/useLogin";
+import { USER_SUCCESS_MESSAGE } from "../../../constants";
 
 export default function Login() {
   const navigate = useNavigate();
   const { userInfo, handleInputId, handleInputPw } = useHandleInputAuth();
-  const { error, login } = useLogin();
+  const { error, loginSuccessMessage, login } = useLogin();
+
+  if (loginSuccessMessage === USER_SUCCESS_MESSAGE.LOGIN_SUCCESS) {
+    navigate("/");
+  }
+
   const onSubmitLogin = (e: any) => {
     e.preventDefault();
-    login(userInfo).then((response) => console.log(response));
+    login(userInfo);
     console.log(error);
   };
+
   const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleInputId(e.target.value);
   };
+
   const handlePw = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleInputPw(e.target.value);
   };
+
   return (
     <>
       <LoginSection>
