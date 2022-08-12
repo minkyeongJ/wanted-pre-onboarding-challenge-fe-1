@@ -11,12 +11,12 @@ import {
   Title,
   TitleSection,
 } from "./Styles";
-import useHandleLogin from "../../hooks/useHandleLogin";
-import useLogin from "../../hooks/useLogin";
+import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
+import useLogin from "../../../hooks/useLogin";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userInfo, handleInpuId, handleInpuPw } = useHandleLogin();
+  const { userInfo, handleInputId, handleInputPw } = useHandleInputAuth();
   const { error, login } = useLogin();
   const onSubmitLogin = (e: any) => {
     e.preventDefault();
@@ -24,10 +24,10 @@ export default function Login() {
     console.log(error);
   };
   const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleInpuId(e.target.value);
+    handleInputId(e.target.value);
   };
   const handlePw = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleInpuPw(e.target.value);
+    handleInputPw(e.target.value);
   };
   return (
     <>

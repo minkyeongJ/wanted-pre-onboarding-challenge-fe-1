@@ -10,13 +10,13 @@ import {
   TitleSection,
   Validate,
 } from "./Styles";
-import useSignUp from "../../hooks/useSignUp";
-import useHandleSignUp from "../../hooks/useHandleSignUp";
-import useSignUpValidation from "../../hooks/useSignUpValidation";
+import useSignUp from "../../../hooks/useSignUp";
+import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
+import useSignUpValidation from "../../../hooks/useSignUpValidation";
 
 export default function SignUp() {
   const { error, signUp } = useSignUp();
-  const { userInfo, handleInputId, handleInputPw } = useHandleSignUp();
+  const { userInfo, handleInputId, handleInputPw } = useHandleInputAuth();
   const {
     validationMessage,
     isInputValidateState,
@@ -31,12 +31,12 @@ export default function SignUp() {
     console.log(error);
   };
 
-  const handleId = (e: any) => {
+  const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleInputId(e.target.value);
     handleCheckId(e.target.value);
   };
 
-  const handlePw = (e: any) => {
+  const handlePw = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleInputPw(e.target.value);
     handleCheckPw(e.target.value);
   };
