@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/reset.css";
 import "./styles/global.css";
-import Login from "./pages/login/Login";
+import Login from "./pages/auth/login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from "./pages/signUp/SignUp";
 
