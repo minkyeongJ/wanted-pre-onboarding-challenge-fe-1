@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -13,16 +13,18 @@ import {
 } from "./Styles";
 import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
 import useLogin from "../../../hooks/useLogin";
-import { USER_SUCCESS_MESSAGE } from "../../../constants";
+import { AUTH_SUCCESS_MESSAGE } from "../../../constants";
 
 export default function Login() {
   const navigate = useNavigate();
   const { userInfo, handleInputId, handleInputPw } = useHandleInputAuth();
   const { error, loginSuccessMessage, login } = useLogin();
 
-  if (loginSuccessMessage === USER_SUCCESS_MESSAGE.LOGIN_SUCCESS) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (loginSuccessMessage === AUTH_SUCCESS_MESSAGE.LOGIN_SUCCESS) {
+      navigate("/");
+    }
+  }, [loginSuccessMessage]);
 
   const onSubmitLogin = (e: any) => {
     e.preventDefault();

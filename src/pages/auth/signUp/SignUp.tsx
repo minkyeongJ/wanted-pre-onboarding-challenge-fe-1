@@ -13,10 +13,13 @@ import {
 import useSignUp from "../../../hooks/useSignUp";
 import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
 import useSignUpValidation from "../../../hooks/useSignUpValidation";
+import { AUTH_SUCCESS_MESSAGE } from "../../../constants";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
-  const { error, signUp } = useSignUp();
+  const { error, signUpSuccessMessage, signUp } = useSignUp();
   const { userInfo, handleInputId, handleInputPw } = useHandleInputAuth();
+
   const {
     validationMessage,
     isInputValidateState,
@@ -28,7 +31,6 @@ export default function SignUp() {
     e.preventDefault();
     console.log(userInfo);
     signUp(userInfo).then((response) => console.log(response));
-    console.log(error);
   };
 
   const handleId = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +51,14 @@ export default function SignUp() {
       setButtonOff(true);
     }
   }, [isInputValidateState]);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (signUpSuccessMessage === AUTH_SUCCESS_MESSAGE.SIGNUP_SUCCESS) {
+      alert("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.");
+      navigate("/login");
+    }
+  }, [signUpSuccessMessage]);
 
   return (
     <>

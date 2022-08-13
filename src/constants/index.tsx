@@ -8,8 +8,9 @@ const USER_VALIDATION_ERRORS = {
   EXIST_USER: "이미 존재하는 유저입니다.",
 };
 
-const USER_SUCCESS_MESSAGE = {
+const AUTH_SUCCESS_MESSAGE = {
   LOGIN_SUCCESS: "성공적으로 로그인 했습니다",
+  SIGNUP_SUCCESS: "계정이 성공적으로 생성되었습니다",
 };
 
 const TODO_VALIDATION_ERRORS = {
@@ -20,6 +21,6 @@ const TODO_VALIDATION_ERRORS = {
 export {
   SERVER_URL,
   USER_VALIDATION_ERRORS,
-  USER_SUCCESS_MESSAGE,
+  AUTH_SUCCESS_MESSAGE,
   TODO_VALIDATION_ERRORS,
 };
