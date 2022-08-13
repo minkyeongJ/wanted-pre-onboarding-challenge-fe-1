@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Input,
-  InputSection,
-  JoinSection,
-  Label,
-  PositionCenter,
-  Title,
-  TitleSection,
-  Validate,
-} from "./Styles";
+import * as Styled from "./Styles";
 import useSignUp from "../../../hooks/useSignUp";
 import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
 import useSignUpValidation from "../../../hooks/useSignUpValidation";
@@ -62,38 +52,40 @@ export default function SignUp() {
 
   return (
     <>
-      <JoinSection>
-        <PositionCenter>
-          <TitleSection>
-            <Title>회원가입</Title>
-          </TitleSection>
+      <Styled.JoinSection>
+        <Styled.PositionCenter>
+          <Styled.TitleSection>
+            <Styled.Title>회원가입</Styled.Title>
+          </Styled.TitleSection>
           <form method="post" onSubmit={onSubmitSignUp}>
-            <InputSection>
-              <Label htmlFor="input_id">아이디</Label>
-              <Input
+            <Styled.InputSection>
+              <Styled.Label htmlFor="input_id">아이디</Styled.Label>
+              <Styled.Input
                 type="email"
                 name="userId"
                 id="input_id"
                 placeholder="아이디를 입력하세요."
                 onChange={handleId}
               />
-              <Validate>{validationMessage.idValidationMessage}</Validate>
-              <Label htmlFor="input_pw">비밀번호</Label>
-              <Input
+              <Styled.Validate>
+                {validationMessage.idValidationMessage}
+              </Styled.Validate>
+              <Styled.Label htmlFor="input_pw">비밀번호</Styled.Label>
+              <Styled.Input
                 type="password"
                 name="userPw"
                 id="input_pw"
                 placeholder="비밀번호를 입력하세요."
                 onChange={handlePw}
               />
-              <Validate>{validationMessage.pwValidationMessage}</Validate>
-            </InputSection>
-            <Button type="submit" disabled={buttonOff}>
+              <Styled.Validate>{validationMessage.pwValidationMessage}</Styled.Validate>
+            </Styled.InputSection>
+            <Styled.Button type="submit" disabled={buttonOff}>
               회원가입
-            </Button>
+            </Styled.Button>
           </form>
-        </PositionCenter>
-      </JoinSection>
+        </Styled.PositionCenter>
+      </Styled.JoinSection>
     </>
   );
 }
