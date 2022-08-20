@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as Styled from "./Styles";
-import useSignUp from "../../../hooks/useSignUp";
-import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
-import useSignUpValidation from "../../../hooks/useSignUpValidation";
-import { AUTH_SUCCESS_MESSAGE } from "../../../constants";
+import useSignUp from "../../../../hooks/useSignUp";
+import useHandleInputAuth from "../../../../hooks/useHandleInputAuth";
+import useSignUpValidation from "../../../../hooks/useSignUpValidation";
+import { AUTH_SUCCESS_MESSAGE } from "../../../../constants";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {

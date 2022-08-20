@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./Styles";
-import useHandleInputAuth from "../../../hooks/useHandleInputAuth";
-import useLogin from "../../../hooks/useLogin";
-import { AUTH_SUCCESS_MESSAGE } from "../../../constants";
+import useHandleInputAuth from "../../../../hooks/useHandleInputAuth";
+import useLogin from "../../../../hooks/useLogin";
+import { AUTH_SUCCESS_MESSAGE } from "../../../../constants";
 
 export default function Login() {
   const navigate = useNavigate();
